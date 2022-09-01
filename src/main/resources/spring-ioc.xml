@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <!--每一个bena标签都代表一个需要spring容器维护的对象-->
+    <bean name="cusService" class="com.briup.estore.demo_estore.service.impl.CustomerServiceImpl">
+        <!--每一个Property标签都代表一个需要被Spring注入的属性对象 ，调用的是cusDao属性的set方法，方法名为setCusDao()-->
+         <property name="cusDao" ref="cusDao"></property>
+     </bean>
+     <bean name="cusDao" class="com.briup.estore.demo_estore.dao.impl.CustomerDaoImpl"></bean>
+</beans>
